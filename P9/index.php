@@ -44,7 +44,7 @@ if(isset($_POST['iniciar']))
 
 body{
     font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
+    background:linear-gradient(135deg, #e3f2fd, #f5f7fa);
     min-height:100vh;
     padding:30px;
 }
