@@ -1,21 +1,27 @@
 <?php
-// ── LÓGICA ────────────────────────────────────────────────────────────────────
-$error      = null;
+
+require_once '../Clases/Validaciones.php';
+require_once '../Clases/Calculos.php';
+
+$error = "";
 $resultados = null;
 
-if (isset($_POST['iniciar'])) {
-    $presupuesto = trim($_POST['presupuesto'] ?? '');
+if(isset($_POST['iniciar']))
+{
+    $presupuesto = trim($_POST['presupuesto']);
 
-    if ($presupuesto === '' || !is_numeric($presupuesto) || (float)$presupuesto <= 0) {
-        $error = '⚠️ Ingresa un presupuesto válido mayor a 0.';
-    } else {
-        $presupuesto = (float)$presupuesto;
-
-        $resultados = [
-            'ginecologia'   => $presupuesto * 0.40,
-            'traumatologia' => $presupuesto * 0.35,
-            'pediatria'     => $presupuesto * 0.25,
-        ];
+    if(
+        Validaciones::esNumero($presupuesto) &&
+        Validaciones::esPositivo($presupuesto)
+    )
+    {
+        $resultados =
+            Calculos::calcularPresupuesto($presupuesto);
+    }
+    else
+    {
+        $error =
+            "⚠️ Ingrese un presupuesto válido mayor que cero.";
     }
 }
 ?>
