@@ -51,12 +51,29 @@
 <h1>Taller de Programación PHP</h1>
 
 <div class="tarjetas">
-
+    <div class="card">
+        <h2>Problema 1</h2>
+        <p>Potencias de un número.</p>
+        <br>
+        <a href="P1/index.php">Abrir</a>
+    </div>
     <div class="card">
         <h2>Problema 2</h2>
         <p>Suma de números del 1 al 1000.</p>
         <br>
         <a href="P2/index.php">Abrir</a>
+    </div>
+    <div class="card">
+        <h2>Problema 3</h2>
+        <p>Potencias de un número.</p>
+        <br>
+        <a href="P3/index.php">Abrir</a>
+    </div>
+    <div class="card">
+        <h2>Problema 4</h2>
+        <p>Potencias de un número.</p>
+        <br>
+        <a href="P4/index.php">Abrir</a>
     </div>
 
     <div class="card">

@@ -30,116 +30,14 @@ if(isset($_POST['iniciar']))
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../Componentes/estilos.css">
+ <link rel="stylesheet" href="estilos.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Potencias de un Número</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-body{
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg, #e3f2fd, #f5f7fa);
-    min-height:100vh;
-    padding:30px;
-}
-
-.contenedor{
-    max-width:900px;
-    margin:auto;
-    background:#ffffff;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-h1{
-    text-align:center;
-    color:#06b6d4;
-    margin-bottom:15px;
-}
-
-.descripcion{
-    text-align:center;
-    color:#64748b;
-    margin-bottom:30px;
-}
-
-input{
-    width:250px;
-    padding:12px;
-    border:2px solid #06b6d4;
-    border-radius:10px;
-    font-size:16px;
-}
-
-input:focus{
-    outline:none;
-    border-color:#0891b2;
-    box-shadow:0 0 10px rgba(6,182,212,.3);
-}
-
-button{
-    padding:12px 25px;
-    background:#06b6d4;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-    margin-left:10px;
-}
-
-button:hover{
-    background:#0891b2;
-    transform:translateY(-2px);
-}
-
-.error{
-    color:#ef4444;
-    text-align:center;
-    margin-top:15px;
-    font-weight:bold;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:25px;
-    overflow:hidden;
-    border-radius:15px;
-}
-
-th{
-    background:#06b6d4;
-    color:white;
-    padding:14px;
-    font-size:17px;
-}
-
-td{
-    padding:14px;
-    text-align:center;
-}
-
-tr:nth-child(even){
-    background:#f1f5f9;
-}
-
-tr:nth-child(odd){
-    background:#ffffff;
-}
-
-tr:hover{
-    background:#cffafe;
-    transition:.3s;
-}
 
 </style>
 

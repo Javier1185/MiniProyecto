@@ -24,119 +24,12 @@ if (isset($_POST['iniciar'])) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Componentes/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto Hospitalario</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #e3f2fd, #f5f7fa);
-            min-height: 100vh;
-            margin: 0;
-            padding: 30px;
-        }
-
-        .contenedor {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
-        }
-
-        h1 {
-            text-align: center;
-            color: #1565c0;
-            margin-bottom: 30px;
-        }
-
-        .formulario {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        input[type="number"] {
-            width: 250px;
-            padding: 12px;
-            border: 2px solid #90caf9;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-
-        input[type="number"]:focus {
-            outline: none;
-            border-color: #1976d2;
-        }
-
-        button {
-            padding: 12px 25px;
-            background: #1976d2;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: .3s;
-            margin-left: 10px;
-        }
-
-        button:hover {
-            background: #0d47a1;
-            transform: translateY(-2px);
-        }
-
-        .error {
-            color: #d32f2f;
-            text-align: center;
-            margin-top: 15px;
-            font-size: 15px;
-        }
-
-        /* ── Tarjetas de resultados ── */
-        .resultados {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .card {
-            flex: 1;
-            min-width: 220px;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
-        }
-
-        .gine   { background: #e3f2fd; }
-        .trauma { background: #fff3e0; }
-        .pedia  { background: #ffebee; }
-
-        .card h3 { margin: 0; }
-
-        .card p {
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        /* ── Gráfica ── */
-        .grafica-card {
-            margin-top: 35px;
-            padding: 25px;
-            border-radius: 20px;
-            background: #fafafa;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
-        }
-
-        canvas { max-height: 500px; }
-    </style>
 </head>
 <body>
     <?php include '../Componentes/navbar.php'; ?>
