@@ -8,9 +8,12 @@
         <li><a href="../index.php">Inicio</a></li>
         <li><a href="../P1/index.php">Problema 1</a></li>
         <li><a href="../P2/index.php">Problema 2</a></li>
+        <li><a href="../P3/index.php">Problema 3</a></li>
         <li><a href="../P4/index.php">Problema 4</a></li>
+        <li><a href="../P5/index.php">Problema 5</a></li>
         <li><a href="../P6/index.php">Problema 6</a></li>
         <li><a href="../P7/index.php">Problema 7</a></li>
+        <li><a href="../P8/index.php">Problema 8</a></li>
         <li><a href="../P9/index.php">Problema 9</a></li>
     </ul>
 
