@@ -15,5 +15,17 @@ class Validaciones
     {
         return $valor >= 1 && $valor <= 9;
     }
+    public static function validarPositivos($numeros)
+    {
+        foreach($numeros as $numero)
+        {
+            if(!is_numeric($numero) || $numero <= 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
 ?>

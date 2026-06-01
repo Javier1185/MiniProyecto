@@ -84,6 +84,13 @@
     </div>
 
     <div class="card">
+        <h2>Problema 7</h2>
+        <p>Calcular el área de un triángulo.</p>
+        <br>
+        <a href="P7/index.php">Abrir</a>
+    </div>
+
+    <div class="card">
         <h2>Problema 9</h2>
         <p>Potencias de un número.</p>
         <br>
