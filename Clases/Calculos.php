@@ -6,7 +6,7 @@ class Calculos
     {
         return ($n * ($n + 1)) / 2;
     }
-
+// ── PROBLEMA 6: Calcular presupuesto hospitalario
     public static function calcularPresupuesto($presupuesto)
     {
         return [
@@ -15,6 +15,7 @@ class Calculos
             'pediatria' => $presupuesto * 0.25
         ];
     }
+    // ── PROBLEMA 9: Generar potencias de un número
     public static function generarPotencias($numero)
     {
         $potencias = [];
