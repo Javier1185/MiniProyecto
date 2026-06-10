@@ -9,7 +9,7 @@ $resultados = null;
 if(isset($_POST['iniciar']))
 {
     $presupuesto = trim($_POST['presupuesto']);
-
+// Validación del presupuesto usando la clase Validaciones
     if(
         Validaciones::esNumero($presupuesto) &&
         Validaciones::esPositivo($presupuesto)

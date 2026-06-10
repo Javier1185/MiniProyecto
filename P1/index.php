@@ -32,6 +32,7 @@ else
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../Componentes/estilos.css">
 <link rel="stylesheet" href="estilo.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

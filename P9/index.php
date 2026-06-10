@@ -5,11 +5,12 @@ require_once '../Clases/Calculos.php';
 
 $potencias = [];
 $error = "";
-
+// Motor del problema 9: Generar potencias de un número
 if(isset($_POST['iniciar']))
 {
     $numero = $_POST['numero'];
-
+// Llama a la clase validaciones para verificar que el número sea válido y positivo, 
+// y luego a la clase cálculos para generar las potencias
     if(
         Validaciones::esNumero($numero) &&
         Validaciones::rangoValido($numero)
