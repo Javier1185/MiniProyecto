@@ -113,5 +113,7 @@ Ingrese un número del 1 al 9 y se mostrarán sus primeras 15 potencias.
 
 </div>
 
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>

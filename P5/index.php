@@ -186,5 +186,8 @@ $colores = [
     <?php endif; ?>
 
 </div>
+
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>

@@ -61,3 +61,25 @@ h1{
     text-align:center;
     margin-bottom:20px;
 }
+/* ── Footer ── */
+.footer-principal {
+    background: #0d0f14;
+    border-top: 1px solid #2a2f40;
+    padding: 16px 24px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: .83rem;
+    color: #7a85a0;
+    letter-spacing: .02em;
+}
+.footer-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.footer-sep  { color: #2a2f40; }
+.footer-uni  { color: #a78bfa; font-weight: 600; }
+.footer-materia { color: #e8ecf4; }
+.footer-fecha   { color: #6c8fff; font-weight: 600; }

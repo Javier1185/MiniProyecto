@@ -52,5 +52,7 @@ if (isset($_POST['iniciar'])) {
 
 </div>
 
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>

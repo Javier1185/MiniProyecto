@@ -141,5 +141,7 @@ if(isset($_POST['calcular']))
 
 </div>
 
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>

@@ -133,5 +133,8 @@ if(isset($_POST['iniciar']))
     <?php endif; ?>
 
 </div>
+
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>

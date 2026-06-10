@@ -72,5 +72,7 @@ Calcular la suma de los números pares e impares comprendidos entre 1 y 200.
 
 </div>
 
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>

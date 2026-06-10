@@ -110,5 +110,7 @@ else
 
 </div>
 
+<?php include '../Componentes/footer.php'; ?>
+
 </body>
 </html>
