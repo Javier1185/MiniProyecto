@@ -52,7 +52,7 @@ if(isset($_POST['iniciar']))
             name="presupuesto"
             step="0.01"
             min="0.01"
-            placeholder="Ejemplo: 20000"
+            placeholder="0.00"
             value="<?php echo htmlspecialchars($_POST['presupuesto'] ?? ''); ?>"
             required
         >
