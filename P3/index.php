@@ -65,7 +65,7 @@ if(isset($_POST['calcular']))
     <?php if($procesado && !empty($multiplos)): ?>
 
     <div class="resumen">
-        <span>✅ <?php echo count($multiplos); ?> múltiplos generados</span>
+        <span> <?php echo count($multiplos); ?> múltiplos generados</span>
         <span>Máximo: <strong><?php echo number_format(4 * count($multiplos), 0, '.', ','); ?></strong></span>
         <span style="font-size:.78rem;color:#94a3b8;">
             PHP_INT_MAX = <?php echo number_format(PHP_INT_MAX, 0, '.', ','); ?> — sin riesgo de overflow

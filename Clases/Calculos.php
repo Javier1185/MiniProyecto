@@ -19,7 +19,6 @@ class Calculos
     public static function generarPotencias($numero)
     {
         $potencias = [];
-
         for($i = 1; $i <= 15; $i++)
         {
             $potencias[] = [
@@ -27,7 +26,6 @@ class Calculos
                 'resultado' => pow($numero, $i)
             ];
         }
-
         return $potencias;
     }
     

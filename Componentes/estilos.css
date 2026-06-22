@@ -9,6 +9,7 @@ body{
     background:linear-gradient(135deg,#0f172a,#1e293b);
     min-height:100vh;
     padding:30px;
+    padding-bottom: 60px;
 }
 
 .navbar{
@@ -67,10 +68,14 @@ h1{
     border-top: 1px solid #2a2f40;
     padding: 16px 24px;
     text-align: center;
-    margin-top: 40px;
     font-size: .83rem;
     color: #7a85a0;
     letter-spacing: .02em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 }
 .footer-contenido {
     display: flex;
