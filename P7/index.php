@@ -1,6 +1,7 @@
 <?php
 require_once '../Clases/Calculos.php';
 require_once '../Clases/Validaciones.php';
+
 $resultado = [];
 $error = "";
 
@@ -18,7 +19,9 @@ $error = "";
 
 </head>
 <body>
+
 <?php include '../Componentes/navbar.php'; ?>
+
 <div class="contenedor">
 
 <h1>Problema #7</h1>
@@ -35,6 +38,7 @@ Calcular promedio, desviación estándar, nota mínima y máxima.
         type="number"
         name="cantidad"
         min="1"
+        max="100"
         placeholder="Cantidad de notas"
         required
     >
@@ -62,6 +66,8 @@ for($i = 1; $i <= $cantidad; $i++):
 <input
     type="number"
     step="0.01"
+    min="0"
+    max="100"
     name="notas[]"
     placeholder="Nota <?php echo $i; ?>"
     required
@@ -82,12 +88,22 @@ for($i = 1; $i <= $cantidad; $i++):
 
 <?php
 
-
 if(isset($_POST['calcular']))
 {
     $notas = $_POST['notas'];
 
-    if(Validaciones::validarPositivos($notas))
+    $validas = true;
+
+    foreach($notas as $nota)
+    {
+        if(!is_numeric($nota) || $nota < 0 || $nota > 100)
+        {
+            $validas = false;
+            break;
+        }
+    }
+
+    if($validas)
     {
         $estadisticas = Calculos::calcularEstadisticas($notas);
 
@@ -101,16 +117,19 @@ if(isset($_POST['calcular']))
     else
     {
         $resultado = [];
-        $error = "Todas las notas deben ser números positivos.";
+        $error = "Todas las notas deben estar entre 0 y 100.";
     }
 }
 ?>
 
+<?php if(!empty($error)): ?>
+    <p class="error"><?php echo $error; ?></p>
+<?php endif; ?>
+
 <?php if(!empty($resultado)): ?>
 
 <table>
-    
- 
+
 <tr>
     <th>Dato</th>
     <th>Resultado</th>
@@ -118,12 +137,12 @@ if(isset($_POST['calcular']))
 
 <tr>
     <td>Promedio</td>
-    <td><?php echo number_format($resultado['promedio'],2); ?></td>
+    <td><?php echo number_format($resultado['promedio'], 2); ?></td>
 </tr>
 
 <tr>
     <td>Desviación Estándar</td>
-    <td><?php echo number_format($resultado['desviacion'],2); ?></td>
+    <td><?php echo number_format($resultado['desviacion'], 2); ?></td>
 </tr>
 
 <tr>
