@@ -9,8 +9,8 @@ body{
     background:linear-gradient(135deg,#0f172a,#1e293b);
     min-height:100vh;
     padding:30px;
+    padding-bottom:80px;
 }
-
 .navbar{
      background:#111827;
     color:white;
@@ -54,6 +54,7 @@ body{
     padding:35px;
     border-radius:20px;
     box-shadow:0 15px 35px rgba(0,0,0,.12);
+    flex: 1; /* ← solo agrega esto */
 }
 
 h1{
@@ -67,10 +68,15 @@ h1{
     border-top: 1px solid #2a2f40;
     padding: 16px 24px;
     text-align: center;
-    margin-top: 40px;
     font-size: .83rem;
     color: #7a85a0;
     letter-spacing: .02em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
 }
 .footer-contenido {
     display: flex;
