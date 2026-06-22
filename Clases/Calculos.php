@@ -128,30 +128,86 @@ class Calculos
     }
 
     // ── PROBLEMA 8: Estación del año
-    public static function determinarEstacion($mes, $dia)
-    {
-        $diaAnio  = (int) date('z', mktime(0, 0, 0, $mes, $dia, 2001));
-        $primavera = (int) date('z', mktime(0, 0, 0, 3,  21, 2001));
-        $verano    = (int) date('z', mktime(0, 0, 0, 6,  21, 2001));
-        $otono     = (int) date('z', mktime(0, 0, 0, 9,  23, 2001));
-        $invierno  = (int) date('z', mktime(0, 0, 0, 12, 21, 2001));
+  public static function determinarEstacion($mes, $dia)
+{
+    // VERANO
+    if (
+        ($mes == 12 && $dia >= 21) ||
+        ($mes == 1) ||
+        ($mes == 2) ||
+        ($mes == 3 && $dia <= 20)
+    ) {
+        return 'verano';
+    }
 
-        if($diaAnio >= $primavera && $diaAnio < $verano)  return 'primavera';
-        if($diaAnio >= $verano    && $diaAnio < $otono)   return 'verano';
-        if($diaAnio >= $otono     && $diaAnio < $invierno) return 'otono';
+    // OTOÑO
+    if (
+        ($mes == 3 && $dia >= 21) ||
+        ($mes == 4) ||
+        ($mes == 5) ||
+        ($mes == 6 && $dia <= 21)
+    ) {
+        return 'otono';
+    }
+
+    // INVIERNO
+    if (
+        ($mes == 6 && $dia >= 22) ||
+        ($mes == 7) ||
+        ($mes == 8) ||
+        ($mes == 9 && $dia <= 22)
+    ) {
         return 'invierno';
     }
 
+    // PRIMAVERA
+    return 'primavera';
+}
+
     // Retorna nombre, ícono e info de la estación.
     public static function infoEstacion($estacion)
-    {
-        $data = [
-            'verano'    => ['nombre'=>'Verano',    'icono'=>'☀️', 'temperatura'=>'25°C – 40°C', 'clima'=>'Soleado y cálido',   'rango'=>'21 jun – 22 sep', 'descripcion'=>'Días largos con mucha luz solar y temperaturas máximas del año.'],
-            'primavera' => ['nombre'=>'Primavera', 'icono'=>'🌸', 'temperatura'=>'10°C – 20°C', 'clima'=>'Templado y florido', 'rango'=>'21 mar – 20 jun', 'descripcion'=>'Florecimiento de la naturaleza, lluvias suaves y cielos despejados.'],
-            'otono'     => ['nombre'=>'Otoño',     'icono'=>'🍂', 'temperatura'=>'5°C – 18°C',  'clima'=>'Fresco y ventoso',  'rango'=>'23 sep – 20 dic', 'descripcion'=>'Las hojas cambian de color; tardes frescas y amaneceres neblinosos.'],
-            'invierno'  => ['nombre'=>'Invierno',  'icono'=>'❄️', 'temperatura'=>'-5°C – 8°C',  'clima'=>'Frío y nevado',     'rango'=>'21 dic – 20 mar', 'descripcion'=>'Noches largas, temperaturas mínimas y posibles nevadas.'],
-        ];
-        return $data[$estacion] ?? [];
-    }
+{
+    $data = [
+
+        'verano' => [
+            'nombre' => 'Verano',
+            'icono' => '☀️',
+            'temperatura' => '25°C – 40°C',
+            'clima' => 'Soleado y cálido',
+            'rango' => '21 dic – 20 mar',
+            'descripcion' => 'Días largos con mucha luz solar y temperaturas máximas del año.'
+        ],
+
+        'otono' => [
+            'nombre' => 'Otoño',
+            'icono' => '🍂',
+            'temperatura' => '15°C – 25°C',
+            'clima' => 'Fresco y ventoso',
+            'rango' => '21 mar – 21 jun',
+            'descripcion' => 'Las hojas cambian de color; tardes frescas y amaneceres neblinosos.'
+        ],
+
+        'invierno' => [
+            'nombre' => 'Invierno',
+            'icono' => '❄️',
+            'temperatura' => '-5°C – 8°C',
+            'clima' => 'Frío y nevado',
+            'rango' => '22 jun – 22 sep',
+            'descripcion' => 'Noches largas, temperaturas mínimas y posibles nevadas.'
+        ],
+
+        'primavera' => [
+            'nombre' => 'Primavera',
+            'icono' => '🌸',
+            'temperatura' => '10°C – 20°C',
+            'clima' => 'Templado y florido',
+            'rango' => '23 sep – 20 dic',
+            'descripcion' => 'Florecimiento de la naturaleza, lluvias suaves y cielos despejados.'
+        ]
+
+    ];
+
+    return $data[$estacion] ?? [];
+}
 }
 ?>
