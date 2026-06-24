@@ -11,10 +11,12 @@ class Validaciones
     {
         return $valor > 0;
     }
+    
      public static function rangoValido($valor)
     {
         return $valor >= 1 && $valor <= 9;
     }
+
     public static function validarPositivos($numeros)
     {
         foreach($numeros as $numero)
