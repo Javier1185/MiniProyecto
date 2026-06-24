@@ -8,8 +8,7 @@ $resultados = null;
 
 if(isset($_POST['iniciar']))
 {
-    $presupuesto = trim($_POST['presupuesto']);
-// Validación del presupuesto usando la clase Validaciones
+    $presupuesto = Validaciones::sanear($_POST['presupuesto']);
     if(
         Validaciones::esNumero($presupuesto) &&
         Validaciones::esPositivo($presupuesto)
@@ -32,7 +31,7 @@ if(isset($_POST['iniciar']))
     <link rel="stylesheet" href="../Componentes/estilos.css">
     <link rel="stylesheet" href="estilos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presupuesto Hospitalario</title>
+    <title>Problema 6 - Presupuesto Hospitalario</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>

@@ -1,105 +1,380 @@
- body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #e3f2fd, #f5f7fa);
-            min-height: 100vh;
-            margin: 0;
-            padding: 30px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;700&display=swap');
 
-        .contenedor {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
-        }
+:root {
+    --bg: #0d0f14;
+    --surface: #161921;
+    --surface2: #1e2230;
+    --border: #2a2f40;
 
-        h1 {
-            text-align: center;
-            color: #1565c0;
-            margin-bottom: 30px;
-        }
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
 
-        .formulario {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+    --text: #e8ecf4;
+    --muted: #7a85a0;
 
-        input[type="number"] {
-            width: 250px;
-            padding: 12px;
-            border: 2px solid #90caf9;
-            border-radius: 10px;
-            font-size: 16px;
-        }
+    --success: #34d399;
+    --warning: #f59e0b;
+    --danger: #f87171;
 
-        input[type="number"]:focus {
-            outline: none;
-            border-color: #1976d2;
-        }
+    --radius: 14px;
+    --shadow: 0 8px 32px rgba(0,0,0,.5);
+}
 
-        button {
-            padding: 12px 25px;
-            background: #1976d2;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: .3s;
-            margin-left: 10px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        button:hover {
-            background: #0d47a1;
-            transform: translateY(-2px);
-        }
+body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    padding:30px;
+}
 
-        .error {
-            color: #d32f2f;
-            text-align: center;
-            margin-top: 15px;
-            font-size: 15px;
-        }
+/* FONDO DECORATIVO */
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(
+            ellipse 60% 40% at 80% 10%,
+            rgba(108,143,255,.08) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 50% 50% at 10% 80%,
+            rgba(167,139,250,.06) 0%,
+            transparent 55%
+        );
+    pointer-events:none;
+    z-index:0;
+}
 
-        /* ── Tarjetas de resultados ── */
-        .resultados {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+/* CONTENEDOR */
+.contenedor{
+    position:relative;
+    z-index:1;
 
-        .card {
-            flex: 1;
-            min-width: 220px;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
-        }
+    max-width:1000px;
+    margin:auto;
 
-        .gine   { background: #e3f2fd; }
-        .trauma { background: #fff3e0; }
-        .pedia  { background: #ffebee; }
+    background:var(--surface);
+    border:1px solid var(--border);
 
-        .card h3 { margin: 0; }
+    border-radius:20px;
+    padding:40px;
 
-        .card p {
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    box-shadow:var(--shadow);
 
-        /* ── Gráfica ── */
-        .grafica-card {
-            margin-top: 35px;
-            padding: 25px;
-            border-radius: 20px;
-            background: #fafafa;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
-        }
+    animation:aparecer .5s ease;
+}
 
-        canvas { max-height: 500px; }
+/* TITULO */
+h1{
+    font-family:'Syne',sans-serif;
+    font-size:2.5rem;
+    font-weight:800;
+
+    text-align:center;
+    margin-bottom:10px;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        var(--accent2)
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitulo{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:35px;
+    font-size:.95rem;
+}
+
+/* FORMULARIO */
+.formulario{
+    text-align:center;
+
+    background:var(--surface2);
+    border:1px solid var(--border);
+
+    padding:30px;
+    border-radius:18px;
+
+    margin-bottom:25px;
+}
+
+.formulario label{
+    color:var(--text);
+    font-size:1rem;
+    margin-bottom:15px;
+    display:block;
+}
+
+input[type="number"]{
+    width:280px;
+
+    padding:14px;
+
+    background:#11141c;
+    color:var(--text);
+
+    border:1px solid var(--border);
+    border-radius:12px;
+
+    font-size:18px;
+    text-align:center;
+
+    transition:.3s;
+}
+
+input[type="number"]:focus{
+    outline:none;
+
+    border-color:var(--accent);
+
+    box-shadow:
+        0 0 0 4px rgba(108,143,255,.15);
+}
+
+/* BOTON */
+button{
+    padding:14px 28px;
+
+    background:linear-gradient(
+        135deg,
+        var(--accent),
+        #4f6fff
+    );
+
+    color:white;
+    border:none;
+    border-radius:12px;
+
+    font-weight:700;
+    font-size:15px;
+
+    cursor:pointer;
+
+    margin-left:10px;
+
+    transition:.3s;
+
+    box-shadow:
+        0 4px 14px rgba(108,143,255,.35);
+}
+
+button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(108,143,255,.45);
+}
+
+/* ERROR */
+.error{
+    text-align:center;
+
+    background:rgba(248,113,113,.10);
+
+    border:1px solid rgba(248,113,113,.25);
+
+    color:#fca5a5;
+
+    padding:14px;
+    border-radius:12px;
+
+    margin-top:15px;
+}
+
+/* PRESUPUESTO TOTAL */
+.presupuesto-total{
+    margin-top:30px;
+    margin-bottom:25px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108,143,255,.18),
+            rgba(167,139,250,.18)
+        );
+
+    border:1px solid rgba(108,143,255,.25);
+
+    padding:30px;
+    border-radius:18px;
+}
+
+.presupuesto-total h2{
+    color:var(--muted);
+    margin-bottom:10px;
+}
+
+.presupuesto-total p{
+    font-size:2.8rem;
+    font-weight:800;
+    color:var(--success);
+}
+
+/* RESULTADOS */
+.resultados{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+
+    justify-content:center;
+
+    margin-top:25px;
+}
+
+/* TARJETAS */
+.card{
+    flex:1;
+    min-width:240px;
+
+    background:var(--surface2);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card::before{
+    content:'';
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+}
+
+.gine::before{
+    background:var(--accent);
+}
+
+.trauma::before{
+    background:var(--warning);
+}
+
+.pedia::before{
+    background:var(--danger);
+}
+
+.card h3{
+    color:var(--text);
+    margin-bottom:12px;
+}
+
+.card p{
+    font-size:2rem;
+    font-weight:800;
+}
+
+.gine p{
+    color:var(--accent);
+}
+
+.trauma p{
+    color:var(--warning);
+}
+
+.pedia p{
+    color:var(--danger);
+}
+
+/* GRAFICA */
+.grafica-card{
+    margin-top:35px;
+
+    background:var(--surface2);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+}
+
+canvas{
+    max-height:500px;
+}
+
+/* ANIMACIONES */
+.presupuesto-total,
+.resultados,
+.grafica-card{
+    animation:aparecer .6s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .contenedor{
+        padding:25px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    input[type="number"]{
+        width:100%;
+        max-width:300px;
+    }
+
+    button{
+        width:100%;
+        margin-top:15px;
+        margin-left:0;
+    }
+
+    .card{
+        min-width:100%;
+    }
+
+    .presupuesto-total p{
+        font-size:2rem;
+    }
+}
